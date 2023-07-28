@@ -1,0 +1,18 @@
+.form-area{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.table-area{
+    position: absolute;
+    left: 32%;
+    margin-top: 20px;
+}
+
+.table-area table{
+    width: 500px;
+}
+
+h4{
+    text-align: center;
+}

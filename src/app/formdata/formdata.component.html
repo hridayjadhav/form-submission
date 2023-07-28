@@ -1,0 +1,48 @@
+
+
+<div class="form-area">
+    <h2>User Details</h2>
+    <input type="text" placeholder="Name" [(ngModel)] = 'name'>
+    <br><br>
+    <input type="email" placeholder="E-mail" [(ngModel)] = 'email'>
+    <br><br>
+    <textarea cols="30" rows="10" placeholder="Address" [(ngModel)] = 'address'></textarea>
+    <br><br>
+    <button (click) = "onClick()"> Submit </button>
+</div>
+
+<div *ngIf = "userArray.length > 0; else noData">
+    <div class="table-area">
+        <table>
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Remove</th>
+            </thead>
+                <tr *ngFor = "let user of userArray ; let index = index">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ user.name}}</td>
+                    <td>{{ user.email}}</td>
+                    <td>{{ user.address}}</td>
+                    <td> <button (click)="onDelete(index)"> Delete </button> </td>
+                </tr>
+        </table>
+    </div>
+</div>
+<ng-template #noData>
+    <h4>No data to show</h4>
+</ng-template>
+
+<div>
+    <ul>
+        <!-- <li *ngFor="let list of listArray"> 
+            {{list | json}}
+        </li> -->
+        <li *ngFor="let item of myObj | keyvalue"> 
+            {{item.key}} - {{item.value}}
+        </li>
+    </ul>
+</div>
+
